@@ -1,5 +1,5 @@
 import { useScroll, useTransform } from 'framer-motion';
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion"
 import "../layout/layout.css";
 
@@ -58,13 +58,29 @@ const Overview = () => {
     { title: 'Data Insights', description: 'Provides valuable analytics on energy usage.' }
   ];
 
-  const ref = useRef(null); // Create a ref using useRef
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["0 1.5", "0.2 1"] });
+  
+  const [scaleRange, setScaleRange] = useState([0.8, 1]);
 
-  const { scrollYProgress } = useScroll({
-    target: ref, // Access the DOM element using ref.current
-    offset: ["0 1.5", "0.2 1"],
-  });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) { // Define your mobile breakpoint
+        setScaleRange([0.9, 1]); // Mobile values
+      } else {
+        setScaleRange([0.8, 1]); // Default values
+      }
+    };
+
+    handleResize(); // Set initial values
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], scaleRange);
 
   return (
 

@@ -41,7 +41,7 @@ const SolutionPage = () => {
                                 <div className="p-5 lg:pl-5 lg:pr-10 lg:pt-5 lg:pb-10 w-full lg:w-[50%] lg:p-20">
                                     <div className="flex-1 flex flex-col gap-10">
                                         <div className='flex justify-center lg:justify-start'>
-                                            <img src="/i1.png" alt="" width={70} height={70} />
+                                            <img src="/i2.png" alt="" width={70} height={70} />
                                         </div>
                                         <section className='flex flex-col gap-4'>
                                             <h2>
@@ -67,7 +67,7 @@ const SolutionPage = () => {
                                 </div>
                                 <div className="flex-1 p-5 lg:p-10 bg-gray-600">
                                     <div className="bg-red-50 h-[200px] lg:h-[100%] rounded-lg overflow-hidden">
-                                        <img src="/p5.png" alt="" className="w-full h-full object-cover" />
+                                        <img src="/public/Case 2.png" alt="" className="w-full h-full object-cover" />
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ const SolutionPage = () => {
                                 </div>
                                 <div className="flex-1 p-5 lg:p-10 bg-gray-600">
                                     <div className="bg-red-50 h-[200px] lg:h-[100%] rounded-lg overflow-hidden">
-                                        <img src="/p2.png" alt="" className="w-full h-full object-cover" />
+                                        <img src="/public/Case 3.png" alt="" className="w-full h-full object-cover" />
                                     </div>
                                 </div>
                             </div>

@@ -8,7 +8,7 @@ const ProductCard = ({ imageSrc, title, features }) => (
   <div className="flex flex-col lg:flex-row border-b-[1px] border-gray-600 mt-10 lg:mt-0">
     <div className="flex-1 lg:border-[2px] border-gray-900 border-y-0">
       <div className="flex justify-center items-center w-full h-full">
-        <div className={`rounded-full ${title === 'ZORA' ? 'bg-gradient-to-r from-purple-500 to-gray-50' : 'bg-gradient-to-r from-orange-500 to-gray-50'} w-40 h-40 md:w-60 md:h-60 overflow-hidden flex justify-center items-center`}>
+        <div className={`rounded-full ${title === 'ZORA' ? 'bg-gradient-to-r animate-slide from-purple-500 to-gray-50' : 'bg-gradient-to-r animate-slide from-orange-500 to-gray-50'} w-40 h-40 md:w-60 md:h-60 overflow-hidden flex justify-center items-center`}>
           <div className="rounded-full bg-white w-36 h-36 md:w-56 md:h-56 overflow-hidden">
             <img src={imageSrc} alt={title} className="object-cover object-center w-full h-full" />
           </div>
@@ -102,7 +102,7 @@ const Overview = () => {
           }}>
 
           <ProductCard
-            imageSrc="./p2.png"
+            imageSrc="/public/Case 2.png"
             title="ZORA"
             features={zoraFeatures}
           />
@@ -114,7 +114,7 @@ const Overview = () => {
             opacity: scaleProgress
           }}>
           <ProductCard
-            imageSrc="./p2.png"
+            imageSrc="/public/Case 3.png"
             title="ZOSS"
             features={zossFeatures}
           />

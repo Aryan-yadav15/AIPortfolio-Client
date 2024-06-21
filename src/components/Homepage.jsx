@@ -1,6 +1,5 @@
 import React from 'react';
 import Herosections from './sections/Herosections';
-import { InfiniteMovingCards } from './ui/InfiniteMovingCards.jsx';
 import BackgroundAudioPlayer from './BackgroundAudio.jsx'; // Import your BackgroundAudio component
 
 const Homepage = ({ contactRef }) => {

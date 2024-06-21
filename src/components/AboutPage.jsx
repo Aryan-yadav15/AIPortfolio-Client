@@ -7,11 +7,26 @@ import "../layout/layout.css";
 
 
 
-const AboutPage = () => {
+const AboutPage = ({ founderRef }) => {
 
-    const clients = [...new Array(10)].map((client, index) => ({
-        href: `/${index + 1}.png`
-    }))
+    const handleScroll = (ref) => {
+        if (ref && ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const clientTexts = [
+        "Building the future of convenience",
+        "Creating innovative solutions",
+        "Delivering seamless experiences",
+        "Empowering businesses with technology",
+        "Transforming ideas into reality",
+    ];
+
+    const clients = clientTexts.map((text, index) => ({
+        key: index, // Unique key for each client object
+        text: text
+    }));
 
 
     const ref = useRef(null); // Create a ref using useRef
@@ -28,19 +43,19 @@ const AboutPage = () => {
             id: 1,
             name: "Prashant S B",
             designation: "Founder & CEO",
-            image:"/ceo.jpg"
+            image: "/ceo.jpg"
         },
         {
             id: 2,
             name: "Vishruth",
             designation: "Data Scientist",
-            image:"/founder.jpg"
+            image: "/founder.jpg"
         },
         {
             id: 3,
             name: "Kishor Kumar Naik P",
             designation: "Co-founder",
-            image:"/dev.jpg"
+            image: "/dev.jpg"
         },
     ];
     return (
@@ -77,7 +92,7 @@ const AboutPage = () => {
                                     <div className="aspect-square relative">
                                         <div className="h-80 lg:h-96">
                                             <img
-                                                src="./p5.png"
+                                                src="/public/swichboard sl1.png"
                                                 alt="image"
                                                 className="object-cover w-full h-full rounded-lg shadow-lg shadow-gray-600"
                                             />
@@ -87,12 +102,12 @@ const AboutPage = () => {
                                 <div className="text-gray-800 flex-2 flex flex-col px-5 py-5 lg:px-10 lg:py-5">
                                     <section>
                                         <div className="w-64 lg:w-80">
-                                            <img src="/logo-horizontal-dark.png" alt="" width={600}/>
+                                            <img src="/logo-horizontal-dark.png" alt="" width={600} />
                                         </div>
                                     </section>
                                     <section className="py-6 flex flex-col gap-3 lg:w-[600px]">
                                         <h1 className="text-2xl lg:text-3xl font-medium capitalize">
-                                        A Disruptive Technology Company focusing on Transforming Tomorrow with Intelligent Living
+                                            A Disruptive Technology Company focusing on Transforming Tomorrow with Intelligent Living
                                         </h1>
                                         <p>
                                             ZebiOps Technology Private Limited is a forward-thinking tech company focused on creating innovative AI-driven solutions to enhance personal and home automation. Our flagship product, ZORA, is designed to revolutionize personal productivity and efficiency.
@@ -100,7 +115,9 @@ const AboutPage = () => {
                                     </section>
                                     <section className="flex flex-col lg:flex-row gap-5 items-start">
                                         <div className="mt-2">
-                                            <button className="bg-gray-800 text-white text-xl px-8 py-2 rounded-lg flex-1 hover:bg-gray-700">
+                                            <button className="bg-gray-800 text-white text-xl px-8 py-2 rounded-lg flex-1 hover:bg-gray-700"
+                                                onClick={() => handleScroll(founderRef)}
+                                            >
                                                 Meet us
                                             </button>
                                         </div>

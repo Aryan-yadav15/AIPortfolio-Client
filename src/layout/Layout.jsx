@@ -19,6 +19,7 @@ const Layout = () => {
     const aboutRef = useRef(null);
     const contactRef = useRef(null);
     const projectsRef = useRef(null);
+    const founderRef = useRef(null);
 
     useEffect(() => {
         // Simulate a loading period
@@ -51,7 +52,9 @@ const Layout = () => {
                                 />
                             </div>
                             <div ref={aboutRef}>
-                                <AboutPage />
+                                <AboutPage
+                                    founderRef={founderRef}
+                                />
                             </div>
 
                             <div ref={projectsRef}>
@@ -63,7 +66,9 @@ const Layout = () => {
 
                             <Technology />
 
-                            <Founders />
+                            <div ref={founderRef}>
+                                <Founders />
+                            </div>
 
                             <Testimonial />
                         </div>

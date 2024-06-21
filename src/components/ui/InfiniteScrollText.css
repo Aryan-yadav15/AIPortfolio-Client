@@ -1,0 +1,9 @@
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .animate-scrollText {
+    animation: scrollText 15s linear infinite; /* Adjust duration as needed */
+  }

@@ -67,7 +67,7 @@ const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
             className="flex-shrink-0 flex flex-col items-center px-4 py-8 mx-2 bg-gray-200 rounded-lg shadow-md"
             style={{ width: '500px' }}
           >
-            <div className="bg-gray-100 p-2 md:p-8">
+            <div className="bg-gray-100 p-2 md:p-8 flex flex-col gap-2">
               <p className="text-lg font-medium text-gray-800">{testimonial.name}</p>
               <div className="w-full">
                 <p className="inline-block p-2  bg-purple-800 rounded-lg">{testimonial.title}</p>

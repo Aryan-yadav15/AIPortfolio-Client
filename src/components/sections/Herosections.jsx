@@ -23,7 +23,7 @@ const Herosections = () => {
   return (
     <>
       <div className=''>
-        <div className=" w-full mt-8 xsm:mt-0 sm:mt-24 md:mt-[-10rem]  lg:mt-0 xlg:mt-[1rem] mb-20 flex flex-col justify-center items-center gap-5 relative h-[calc(100vh_-_20px)]">
+        <div className=" w-full mt-8 xsm:mt-0 sm:mt-24 md:mt-[-10rem]  lg:mt-0 xlg:mt-[-2rem] mb-20 flex flex-col justify-center items-center gap-5 relative h-[calc(100vh_-_20px)]">
           <div className="flex flex-col items-center relative">
             <motion.div
               initial={{ opacity: 0, y: 0 }}

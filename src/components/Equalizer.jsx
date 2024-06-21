@@ -73,7 +73,7 @@ const Equalizer = () => {
   }, [numBars]);
 
   return (
-    <div className="h-[90vh] w-[90vw] md:opacity-80 xlg:opacity-100 absolute items-center justify-center z-0 xsm:mt-[-5rem]  md:mt-[-10vh] lg:mt-[10vh] xlg:mt-0 2xlg:mt-5 overflow-hidden">
+    <div className="h-[90vh] w-[90vw] md:opacity-80 xlg:opacity-100 absolute items-center justify-center z-0 xsm:mt-[-5rem]  md:mt-[-10vh] lg:mt-[10vh] xlg:mt-10 2xlg:mt-5 overflow-hidden">
       <div className="equalizer-container">
         <div className="glow-background"></div>
         <div className="equalizer">

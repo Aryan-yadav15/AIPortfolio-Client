@@ -92,7 +92,7 @@ const AboutPage = ({ founderRef }) => {
                                     <div className="aspect-square relative">
                                         <div className="h-80 lg:h-96">
                                             <img
-                                                src="/public/swichboard sl1.png"
+                                                src="/swichboard sl1.png"
                                                 alt="image"
                                                 className="object-cover w-full h-full rounded-lg shadow-lg shadow-gray-600"
                                             />

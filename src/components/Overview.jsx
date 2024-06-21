@@ -102,7 +102,7 @@ const Overview = () => {
           }}>
 
           <ProductCard
-            imageSrc="/public/Case 2.png"
+            imageSrc="/Case 2.png"
             title="ZORA"
             features={zoraFeatures}
           />
@@ -114,7 +114,7 @@ const Overview = () => {
             opacity: scaleProgress
           }}>
           <ProductCard
-            imageSrc="/public/Case 3.png"
+            imageSrc="/Case 3.png"
             title="ZOSS"
             features={zossFeatures}
           />

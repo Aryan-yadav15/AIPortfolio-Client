@@ -1,99 +1,99 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./InfiniteMovingCards.css"
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import Modal from './TestimonialModal'; // Adjust the import to the correct path
 
-const InfiniteMovingCards = ({
-  items,
-  direction = "left",
-  speed = "fast",
-  pauseOnHover = true,
-  className,
-}) => {
-  const containerRef = useRef(null);
-  const scrollerRef = useRef(null);
-  const [start, setStart] = useState(false);
+const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
+  const carouselRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
-    if (items.length) {
-      addAnimation();
+    const handleNext = () => {
+      if (carouselRef.current) {
+        carouselRef.current.style.transition = 'transform 5s linear';
+        carouselRef.current.style.transform = `translateX(-520px)`;
+      }
+    };
+
+    if (isAnimating) {
+      const intervalId = setInterval(handleNext, interval);
+      return () => clearInterval(intervalId);
     }
-  }, [items]);
+  }, [isAnimating, interval]);
 
-  const addAnimation = () => {
-    if (containerRef.current && scrollerRef.current) {
-      scrollerRef.current.innerHTML = ""; // Clear previous content
-      const fragment = document.createDocumentFragment();
+  useEffect(() => {
+    const handleTransitionEnd = () => {
+      if (carouselRef.current) {
+        carouselRef.current.style.transition = 'none';
+        carouselRef.current.style.transform = 'translateX(0)';
+        const firstElement = carouselRef.current.children[0];
+        carouselRef.current.appendChild(firstElement);
+      }
+    };
 
-      items.forEach((item) => {
-        const li = document.createElement('li');
-        li.className = "w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px] card-background-white-gray";
-        li.innerHTML = `
-          <blockquote class="relative p-2 border rounded-lg bg-gray-50">
-            <div class="relative z-20 mt-2 flex flex-row items-center">
-              <span class="flex flex-col gap-1">
-                <span class="leading-[1.6] text-xl text-gray-800 font-semibold">${item.name}</span>
-                <span class="text-sm leading-[1.6] text-gray-800 font-normal bg-blue-100 rounded-lg px-2 py-1 mb-4">${item.title}</span>
-              </span>
-            </div>
-            <div aria-hidden="true" class="user-select-none mt-4 -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"></div>
-            <span class="relative z-20 text-sm leading-[1.6] text-gray-900 font-normal">${item.quote}</span>
-          </blockquote>
-        `;
-        fragment.appendChild(li);
-      });
-
-      scrollerRef.current.appendChild(fragment);
-
-      const scrollerContent = Array.from(scrollerRef.current.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        scrollerRef.current.appendChild(duplicatedItem);
-      });
-
-      getDirection();
-      getSpeed();
-      setStart(true);
+    if (carouselRef.current) {
+      carouselRef.current.addEventListener('transitionend', handleTransitionEnd);
     }
+
+    return () => {
+      if (carouselRef.current) {
+        carouselRef.current.removeEventListener('transitionend', handleTransitionEnd);
+      }
+    };
+  }, []);
+
+  const handleReadMore = (testimonial) => {
+    setSelectedTestimonial(testimonial);
+    setIsAnimating(false);
+    setShowModal(true);
   };
 
-  const getDirection = () => {
-    if (containerRef.current) {
-      containerRef.current.style.setProperty(
-        "--animation-direction",
-        direction === "left" ? "forwards" : "reverse"
-      );
-    }
-  };
-
-  const getSpeed = () => {
-    if (containerRef.current) {
-      const speedMap = {
-        fast: "60s",
-        normal: "80s",
-        slow: "100s",
-      };
-      containerRef.current.style.setProperty(
-        "--animation-duration",
-        speedMap[speed]
-      );
-    }
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedTestimonial(null);
+    setIsAnimating(true);
   };
 
   return (
-    <div
-      ref={containerRef}
-      className={`scroller relative z-20 max-w-9xl overflow-hidden ${className ? className : ""
-        } mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)`}
-    >
-      <ul
-        ref={scrollerRef}
-        className={`flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap ${start ? "animate-scroll " : ""
-          } ${pauseOnHover ? "hover:[animation-play-state:paused]" : ""}`}
+    <div className="relative w-full overflow-hidden">
+      <div
+        ref={carouselRef}
+        className="flex"
       >
-        {/* Items will be dynamically added here */}
-      </ul>
+        {testimonials.concat(testimonials[0]).map((testimonial, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 flex flex-col items-center px-4 py-8 mx-2 bg-gray-200 rounded-lg shadow-md"
+            style={{ width: '500px' }}
+          >
+            <div className="bg-gray-100 p-2 md:p-8">
+              <p className="text-lg font-medium text-gray-800">{testimonial.name}</p>
+              <div className="w-full">
+                <p className="inline-block p-2  bg-purple-800 rounded-lg">{testimonial.title}</p>
+              </div>
+              <p className="text-gray-600 max-h-24 overflow-hidden">{testimonial.quote}</p>
+              <button
+                className="mt-4 text-purple-500 hover:text-purple-700"
+                onClick={() => handleReadMore(testimonial)}
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+      {showModal && selectedTestimonial && (
+        <Modal onClose={handleCloseModal}>
+          <div className="p-4">
+            <p className="text-lg font-medium text-gray-800">{selectedTestimonial.name}</p>
+            <p className="p-2 bg-blue-200">{selectedTestimonial.title}</p>
+            <p className="text-gray-600">{selectedTestimonial.quote}</p>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };
 
-export default InfiniteMovingCards;
+export default TestimonialCarousel;

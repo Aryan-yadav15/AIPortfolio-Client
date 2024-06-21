@@ -1,5 +1,4 @@
 import React from "react";
-import { ContainerScroll } from "./components/ui/3dCard.jsx";
 import Equalizer from "./components/Equalizer.jsx";
 import BackgroundAudioPlayer from "./components/BackgroundAudio.jsx";
 

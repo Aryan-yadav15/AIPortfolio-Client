@@ -92,7 +92,7 @@ const AboutPage = () => {
                                     </section>
                                     <section className="py-6 flex flex-col gap-3 lg:w-[600px]">
                                         <h1 className="text-2xl lg:text-3xl font-medium capitalize">
-                                            A passionate agency who thrives on building business
+                                        A Disruptive Technology Company focusing on Transforming Tomorrow with Intelligent Living
                                         </h1>
                                         <p>
                                             ZebiOps Technology Private Limited is a forward-thinking tech company focused on creating innovative AI-driven solutions to enhance personal and home automation. Our flagship product, ZORA, is designed to revolutionize personal productivity and efficiency.

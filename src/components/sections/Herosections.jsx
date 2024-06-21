@@ -33,7 +33,7 @@ const Herosections = () => {
             >
               <Equalizer />
             </motion.div>
-            <div className="flex flex-col gap-40 xsm:gap-48 sm:gap-28  md:gap-80 lg:gap-10 xlg:gap-48 2xlg:gap-64">
+            <div className="flex flex-col gap-40 xsm:gap-48 sm:gap-28  md:gap-80 lg:gap-10 xlg:gap-40 2xlg:gap-64">
               <div className='pt-10 lg:pt-0 xlg:pt-10'>
                 <div className="px-4 lg:px-12 xlg:px-28 text-center">
                   <h1 className="text-4xl md:text-6xl  lg:p-10 xlg:p-8 md:leading-normal xlg:leading-normal xlg:text-7xl font-regular bg-gradient-custom bg-clip-text text-transparent leading-normal sm:leading-relaxed lg:leading-normal ">

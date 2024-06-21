@@ -1,0 +1,77 @@
+.preloader {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.preloader svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.preloader svg path {
+  stroke: #333;
+  /* Adjust color as needed */
+  stroke-dasharray: 100% 100%;
+  stroke-dashoffset: 100%;
+  animation: draw 2s ease-in-out infinite;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 100%;
+  }
+
+  to {
+    stroke-dashoffset: 0%;
+  }
+}
+
+.text-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.flex-1:hover .text-content {
+  opacity: 1;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 100% 0%;
+  }
+  25% {
+    background-position: 0% 0%;
+  }
+  75% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.animate-slide {
+  animation: slide 1.5s linear infinite;
+  background-size: 200% auto;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

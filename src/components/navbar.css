@@ -1,0 +1,31 @@
+/* Add this CSS to your styles */
+@media (max-width: 1024px) {
+    .dropdown-menu {
+      display: none;
+    }
+  
+    .dropdown-menu.open {
+      display: flex;
+    }
+  }
+  
+  .navbar-toggle {
+    cursor: pointer;
+  }
+  
+  .dropdown-container {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 2.5rem; /* Adjust based on the height of the navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 50;
+  }
+  

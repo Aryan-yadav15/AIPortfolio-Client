@@ -1,0 +1,13 @@
+.center-glow {
+  width: 200px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  background-color: #fff; /* Optional background color */
+  border-radius: 50%; /* Create a circular shape */
+  position: relative; /* Needed for box-shadow positioning */
+  box-shadow: 0 0 50px 70px rgba(255, 255, 255, 0.5); /* Inner glow effect */
+}
+
+.animate-slide {
+  animation: slide 1.5s linear infinite;
+  background-size: 200% auto;
+}

@@ -1,0 +1,13 @@
+/* styles.css or within a <style> block */
+img {
+  transition: all 0.3s ease-in-out;
+}
+
+img:hover {
+   /* Pink shadow with RGBA color */
+  transform: scale(1.2); /* Smoothly scale up */
+}
+
+button img {
+  transition: all 0.3s ease-in-out;
+}

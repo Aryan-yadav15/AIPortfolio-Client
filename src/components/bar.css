@@ -1,0 +1,51 @@
+.bar {
+  position: relative;
+  z-index: 2;
+  width: 1px;
+  /* Adjust bar width */
+  margin-right: 15px;
+  /* Adjust bar spacing */
+  background-color: rgb(207, 110, 207);
+  /* Adjust bar color */
+  transition: height 0.2s ease-in-out;
+  /* Smooth height transition */
+  filter: blur(1.5px);
+  /* Add blur effect */
+
+}
+
+.equalizer-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns items to the start (top) */
+}
+
+
+.glow-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 30%; /* Adjust height to fit the equalizer */
+  background: linear-gradient(90deg, rgba(75, 3, 39, 0) 0%, rgba(255, 0, 200, 0.151) 50%, rgba(7, 0, 0, 0) 100%);
+  filter: blur(20px);
+  z-index: 0; /* Ensure the glow background is behind the equalizer */
+}
+
+.equalizer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-left: -80px;
+  position: relative; /* Ensure the mask effect is applied correctly */
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.9) 70%, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.9) 70%, rgba(0, 0, 0, 0)); /* For Safari */
+  z-index: 1; /* Ensure the equalizer is above the glow background */
+}

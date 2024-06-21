@@ -102,7 +102,7 @@ const Overview = () => {
           }}>
 
           <ProductCard
-            imageSrc="/Case 2.png"
+            imageSrc="/PhoneHor.png"
             title="ZORA"
             features={zoraFeatures}
           />
@@ -114,7 +114,7 @@ const Overview = () => {
             opacity: scaleProgress
           }}>
           <ProductCard
-            imageSrc="/Case 3.png"
+            imageSrc="/Case 5.png"
             title="ZOSS"
             features={zossFeatures}
           />

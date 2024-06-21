@@ -1,5 +1,5 @@
 import { useScroll, useTransform } from 'framer-motion';
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion"
 import "../layout/layout.css";
 
@@ -13,6 +13,34 @@ const SolutionPage = () => {
         offset: ["0 1.5", "0.5 1"],
     });
     const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1])
+
+    const [imageSrc, setImageSrc] = useState('/Case 5.png');
+    const [imageSrc2, setImageSrc2] = useState('/PhoneVert.png');
+
+    useEffect(() => {
+        const updateImageSource = () => {
+            const screenWidth = window.innerWidth;
+            if (screenWidth >= 1600) { // xl: min-width 1900px
+              setImageSrc('/Case 6.png');
+              setImageSrc2('/phoeXLg.png');
+            } else if (screenWidth >= 1000) { // md: min-width 768px
+              setImageSrc('/Case 6.png');
+              setImageSrc2('/PhoneVert.png');
+            } else {
+              setImageSrc('/Case 5.png');
+              setImageSrc2('/PhoneHor.png');
+            }
+          };
+        // Initial load
+        updateImageSource();
+
+        // Update on resize
+        window.addEventListener('resize', updateImageSource);
+
+        // Cleanup event listener on unmount
+        return () => window.removeEventListener('resize', updateImageSource);
+    }, []);
+
 
 
     return (
@@ -65,9 +93,9 @@ const SolutionPage = () => {
                                         </section>
                                     </div>
                                 </div>
-                                <div className="flex-1 p-5 lg:p-10 bg-gray-600">
-                                    <div className="bg-red-50 h-[200px] lg:h-[100%] rounded-lg overflow-hidden">
-                                        <img src="/Case 2.png" alt="" className="w-full h-full object-cover" />
+                                <div className="flex-1 p-5 md:p-7 lg:p-10 bg-gray-600">
+                                    <div className="bg-red-50 h-[200px] md:h-[300px] lg:h-[100%] rounded-lg overflow-hidden">
+                                        <img src={imageSrc2} alt="Responsive"  className="w-full h-full " />
                                     </div>
                                 </div>
                             </div>
@@ -104,15 +132,15 @@ const SolutionPage = () => {
                                     </div>
                                 </div>
                                 <div className="flex-1 p-5 lg:p-10 bg-gray-600">
-                                    <div className="bg-red-50 h-[200px] lg:h-[100%] rounded-lg overflow-hidden">
-                                        <img src="/Case 3.png" alt="" className="w-full h-full object-cover" />
+                                    <div className="bg-red-50 h-[200px] md:h-[400px] lg:h-[600px] rounded-lg overflow-hidden">
+                                        <img src={imageSrc} alt="" className="w-full h-full object-cover" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                </motion.div>
+            </motion.div>
         </div>
 
 

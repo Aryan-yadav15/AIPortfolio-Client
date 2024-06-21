@@ -15,19 +15,11 @@ const AboutPage = ({ founderRef }) => {
         }
     };
 
-    const clientTexts = [
-        "Building the future of convenience",
-        "Creating innovative solutions",
-        "Delivering seamless experiences",
-        "Empowering businesses with technology",
-        "Transforming ideas into reality",
-    ];
-
-    const clients = clientTexts.map((text, index) => ({
+    const clients = [...new Array(10)].map((client, index) => ({
         key: index, // Unique key for each client object
-        text: text
-    }));
-
+        text: "Building the future of convenience"
+      }));
+      
 
     const ref = useRef(null); // Create a ref using useRef
 
@@ -92,14 +84,14 @@ const AboutPage = ({ founderRef }) => {
                                     <div className="aspect-square relative">
                                         <div className="h-80 lg:h-96">
                                             <img
-                                                src="/swichboard sl1.png"
+                                                src="/office.jpg"
                                                 alt="image"
                                                 className="object-cover w-full h-full rounded-lg shadow-lg shadow-gray-600"
                                             />
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-gray-800 flex-2 flex flex-col px-5 py-5 lg:px-10 lg:py-5">
+                                <div className="text-gray-800 md:mt-[-10vh] lg:mt-0 flex-2 flex flex-col px-5 py-5 lg:px-10 lg:py-5">
                                     <section>
                                         <div className="w-64 lg:w-80">
                                             <img src="/logo-horizontal-dark.png" alt="" width={600} />

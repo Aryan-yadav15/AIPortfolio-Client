@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import "../layout/layout.css";
 
-
 const Founders = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [maxHeight, setMaxHeight] = useState(0);
+  const intervalRef = useRef(null);
+  const slidesRef = useRef([]);
 
   const founders = [
     {
@@ -30,13 +32,31 @@ const Founders = () => {
     }
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startInterval = () => {
+    intervalRef.current = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % founders.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
+  };
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [founders.length]);
+  const resetInterval = () => {
+    clearInterval(intervalRef.current);
+    startInterval();
+  };
+
+  useEffect(() => {
+    startInterval();
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  useEffect(() => {
+    const heights = slidesRef.current.map(slide => slide.offsetHeight);
+    setMaxHeight(Math.max(...heights));
+  }, [founders]);
+
+  const handleDotClick = (index) => {
+    setCurrentIndex(index);
+    resetInterval();
+  };
 
   return (
     <div className="p-5">
@@ -50,7 +70,7 @@ const Founders = () => {
           </h1>
         </div>
       </div>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden bg-gray-200 rounded-lg" style={{ height: maxHeight }}>
         <motion.div 
           className="flex"
           style={{ 
@@ -64,6 +84,7 @@ const Founders = () => {
               key={index}
               className="w-full flex-shrink-0"
               style={{ width: `${100 / founders.length}%` }}
+              ref={(el) => slidesRef.current[index] = el}
             >
               <div className="flex flex-col lg:flex-row bg-gray-200 items-center">
                 <div className="lg:w-1/2 p-10 flex justify-center items-center">
@@ -71,7 +92,7 @@ const Founders = () => {
                     <img src={founder.image} alt={founder.name} className="object-cover rounded-lg shadow-lg" />
                   </div>
                 </div>
-                <div className="lg:w-1/2 text-gray-800 flex flex-col p-5 lg:p-10 lg:py-5">
+                <div className="lg:w-1/2 text-gray-800 flex flex-col p-5 lg:p-10 lg:py-5 overflow-y-auto">
                   <div className='mb-8 lg:mb-10'>
                     <img src="/logo-horizontal-dark.png" alt="Company Logo" />
                     <div className='h-[5px] bg-emerald-600'></div>
@@ -93,6 +114,15 @@ const Founders = () => {
             </motion.div>
           ))}
         </motion.div>
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-4">
+          {founders.map((_, index) => (
+            <div 
+              key={index} 
+              className={`h-3 w-3 rounded-full mx-1 cursor-pointer ${currentIndex === index ? 'bg-gray-800' : 'bg-gray-400'}`}
+              onClick={() => handleDotClick(index)}
+            ></div>
+          ))}
+        </div>
       </div>
     </div>
   );

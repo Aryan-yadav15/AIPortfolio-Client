@@ -1,0 +1,14 @@
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.scroller ul {
+  --animation-duration: 40s;
+  --animation-direction: forwards;
+  animation: scroll var(--animation-duration) var(--animation-direction) linear infinite;
+}

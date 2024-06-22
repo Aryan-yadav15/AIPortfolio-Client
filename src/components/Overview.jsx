@@ -8,7 +8,7 @@ const ProductCard = ({ imageSrc, title, features }) => (
   <div className="flex flex-col lg:flex-row border-b-[1px] border-gray-600 mt-10 lg:mt-0">
     <div className="flex-1 lg:border-[2px] border-gray-900 border-y-0">
       <div className="flex justify-center items-center w-full h-full">
-        <div className={`rounded-full ${title === 'ZORA' ? 'bg-gradient-to-r animate-slide from-purple-500 to-gray-50' : 'bg-gradient-to-r animate-slide from-orange-500 to-gray-50'} w-40 h-40 md:w-60 md:h-60 overflow-hidden flex justify-center items-center`}>
+        <div className={`rounded-full ${title === 'ZORA' ? 'bg-gradient-to-r animate-slide from-purple-500 to-gray-50' : 'bg-gradient-to-r animate-slide from-sky-500 to-gray-50'} w-40 h-40 md:w-60 md:h-60 overflow-hidden flex justify-center items-center`}>
           <div className="rounded-full bg-white w-36 h-36 md:w-56 md:h-56 overflow-hidden">
             <img src={imageSrc} alt={title} className="object-cover object-center w-full h-full" />
           </div>
@@ -25,9 +25,9 @@ const ProductCard = ({ imageSrc, title, features }) => (
             <span key={index} className="flex items-center gap-1 ml-4 w-full">
               <span className="text-xl">○</span>
               <div className="flex flex-col w-full">
-              <span className={`font-semibold ${title === 'ZORA' ? 'text-purple-400' : 'text-orange-600'}`}>
-                {feature.title}:
-              </span>
+                <span className={`font-semibold ${title === 'ZORA' ? 'text-purple-400' : 'text-sky-400'}`}>
+                  {feature.title}:
+                </span>
                 <span className="ml-1 text-justify w-full">{feature.description}</span>
               </div>
             </span>
@@ -60,7 +60,7 @@ const Overview = () => {
 
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["0 1.5", "0.2 1"] });
-  
+
   const [scaleRange, setScaleRange] = useState([0.8, 1]);
 
   useEffect(() => {

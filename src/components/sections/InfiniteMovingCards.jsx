@@ -67,8 +67,14 @@ const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
             className="flex-shrink-0 flex flex-col items-center px-4 py-8 mx-2 bg-gray-200 rounded-lg shadow-md"
             style={{ width: '500px' }}
           >
+
             <div className="bg-gray-100 p-2 md:p-8 flex flex-col gap-2">
-              <p className="text-lg font-medium text-gray-800">{testimonial.name}</p>
+              <div className='flex w-full justify-between font-semibold text-2xl'>
+                <p className="text-lg font-medium text-gray-800">{testimonial.name}</p>
+                <p className={testimonial.productCategory === "ZORA" ? 'text-pink-500' : 'text-blue-800'}>
+                  {testimonial.productCategory}
+                </p>
+              </div>
               <div className="w-full">
                 <p className="inline-block p-2  bg-purple-800 rounded-lg">{testimonial.title}</p>
               </div>
@@ -85,11 +91,19 @@ const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
       </div>
       {showModal && selectedTestimonial && (
         <Modal onClose={handleCloseModal}>
-          <div className="p-4">
-            <p className="text-lg font-medium text-gray-800">{selectedTestimonial.name}</p>
-            <p className="p-2 bg-blue-200">{selectedTestimonial.title}</p>
-            <p className="text-gray-600">{selectedTestimonial.quote}</p>
+          <div className="flex flex-col">
+            <div className='w-full justify-end'>
+              <p className='text-gray-500'>{selectedTestimonial.productCategory}</p>
+            </div>
+            <div>
+              <div className="p-4">
+                <p className="text-lg font-medium text-gray-800">{selectedTestimonial.name}</p>
+                <p className="p-2 bg-blue-200">{selectedTestimonial.title}</p>
+                <p className="text-gray-600">{selectedTestimonial.quote}</p>
+              </div>
+            </div>
           </div>
+
         </Modal>
       )}
     </div>

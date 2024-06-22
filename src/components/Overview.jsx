@@ -22,12 +22,12 @@ const ProductCard = ({ imageSrc, title, features }) => (
       <div className="w-[85%] text-justify">
         <div className="leading-6 flex flex-col gap-2">
           {features.map((feature, index) => (
-            <span key={index} className="flex items-start gap-1 ml-4 w-full">
+            <span key={index} className="flex items-center gap-1 ml-4 w-full">
               <span className="text-xl">○</span>
               <div className="flex flex-col w-full">
-                <span className="font-semibold">
-                  {feature.title}:
-                </span>
+              <span className={`font-semibold ${title === 'ZORA' ? 'text-purple-400' : 'text-orange-6Sta00'}`}>
+                {feature.title}:
+              </span>
                 <span className="ml-1 text-justify w-full">{feature.description}</span>
               </div>
             </span>

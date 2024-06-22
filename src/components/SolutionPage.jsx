@@ -79,13 +79,13 @@ const SolutionPage = () => {
                                         </section>
                                         <section className='flex flex-col gap-5'>
                                             <div>
-                                                <span className="bg-gray-200 font-semibold text-gray-950 px-2 rounded-sm text-base lg:text-xl mr-2">Overview</span>
+                                                <span className="bg-purple-200 font-semibold text-gray-950 px-2 rounded-sm text-base lg:text-xl mr-2">Overview</span>
                                             </div>
                                             <p className='text-gray-300'>
                                                 ZORA uses Generative AI and is trained to have human-like conversations. It also has the capability to provide real-time data similar to existing search engines. By combining AI with various mobile apps, ZORA creates a comprehensive solution to address all the digital needs of customers. ZORA listens, learns, and adapts to user preferences, offering a truly personalized experience.
                                             </p>
                                             <div>
-                                                <span className="bg-gray-200 font-semibold text-gray-950 px-2 rounded-sm text-base lg:text-xl">How it Works</span>
+                                                <span className="bg-purple-200 font-semibold text-gray-950 px-2 rounded-sm text-base lg:text-xl">How it Works</span>
                                             </div>
                                             <p className='text-gray-300 pt-3'>
                                                 ZORA (ZebiOps Real-time Assistant) is an advanced AI personal assistant designed to manage various aspects of your digital life efficiently. By integrating AI with search engines, social media, and mobile apps, ZORA aims to transform personal productivity and interaction with technology. The initial launch will focus on two main features: Email Management and Call Management.
@@ -117,13 +117,13 @@ const SolutionPage = () => {
                                         </section>
                                         <section className='flex flex-col gap-5'>
                                             <div>
-                                                <span className="bg-gray-200 font-semibold text-gray-950 px-2 rounded-sm text-base lg:text-xl mr-2">Overview</span>
+                                                <span className="bg-blue-200 font-semibold text-gray-950 px-2 rounded-sm text-base lg:text-xl mr-2">Overview</span>
                                             </div>
                                             <p className='text-gray-300'>
                                                 ZOSS (ZebiOps SmartHome Solution) aims to create intelligent living spaces that converge IoT, AI/ML, and Deep Tech to anticipate and respond intelligently, targeting the premium segment.
                                             </p>
                                             <div>
-                                                <span className="bg-gray-200 font-semibold text-gray-950 px-2 rounded-sm text-base lg:text-xl">How it Works</span>
+                                                <span className="bg-blue-200 font-semibold text-gray-950 px-2 rounded-sm text-base lg:text-xl">How it Works</span>
                                             </div>
                                             <p className='text-gray-300 pt-3'>
                                                 Equipped with state-of-the-art sensors and detectors, including an advanced IR sensor and gas sensors, ZOSS prioritizes your safety and well-being at all times. The ZORA voice assistant for human-like conversations and real-time updates on stocks, weather, sports, news, and more. Additionally, the ZORA mobile app enables remote monitoring and control of home automation, ensuring a seamless and integrated smart home experience.

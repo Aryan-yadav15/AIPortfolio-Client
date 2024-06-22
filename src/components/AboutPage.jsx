@@ -65,9 +65,6 @@ const AboutPage = ({ founderRef }) => {
                             We are
                         </span>
                     </h1>
-                    <p className="pt-4 text-gray-300">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nihil.
-                    </p>
                 </div>
             </div>
             <motion.div

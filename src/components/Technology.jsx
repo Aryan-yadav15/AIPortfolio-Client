@@ -26,7 +26,7 @@ const Technology = () => {
             <section className="xlg:px-5 flex flex-col lg:flex-row gap-5">
                 {[
                     {
-                        imgSrc: "/satellite-dish1.png",
+                        imgSrc: "/lock.png",
                         imgWidth: 90,
                         imgHeight: 90,
                         title: "Security",

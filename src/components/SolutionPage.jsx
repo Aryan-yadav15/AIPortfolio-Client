@@ -24,7 +24,7 @@ const SolutionPage = () => {
               setImageSrc('/Case 6.png');
               setImageSrc2('/phoeXLg.png');
             } else if (screenWidth >= 1000) { // md: min-width 768px
-              setImageSrc('/Case 6.png');
+              setImageSrc('/3Stack.png');
               setImageSrc2('/PhoneVert.png');
             } else {
               setImageSrc('/Case 5.png');

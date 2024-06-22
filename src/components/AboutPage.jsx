@@ -130,7 +130,7 @@ const AboutPage = ({ founderRef }) => {
                                     <div className="border border-gray-700 rounded-lg lg:p-10 h-full">
                                         <div className="bg-gradient-to-t from-transparent to-white/10 rounded-lg p-2 lg:p-5 h-full flex flex-col justify-between">
                                             <div className="flex flex-col items-center text-center gap-5">
-                                                <img src="/i2.png" alt="icon" width={70} height={70} />
+                                                <img src="/flag.png" alt="icon" width={70} height={70} />
                                                 <section className="flex flex-col gap-2">
                                                     <h2 className="text-4xl bg-gradient-custom bg-clip-text text-transparent">Our Mission </h2>
                                                     <p className="text-xl">ZebiOps SmartHome Solution</p>
@@ -148,7 +148,7 @@ const AboutPage = ({ founderRef }) => {
                                     <div className="border border-gray-700 rounded-lg lg:p-10 h-full">
                                         <div className="bg-gradient-to-t from-transparent to-white/10 rounded-lg p-2 lg:p-5 h-full flex flex-col justify-between">
                                             <div className="flex flex-col items-center text-center gap-5">
-                                                <img src="/i2.png" alt="icon" width={70} height={70} />
+                                                <img src="/eye.png" alt="icon" width={70} height={70} />
                                                 <section className="flex flex-col gap-2">
                                                     <h2 className="text-4xl bg-gradient-custom bg-clip-text text-transparent">Our Vision</h2>
                                                     <p className="text-xl">ZebiOps SmartHome Solution</p>

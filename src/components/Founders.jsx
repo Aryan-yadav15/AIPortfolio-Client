@@ -18,14 +18,14 @@ const Founders = () => {
     },
     {
       name: 'Vishruth',
-      title: 'Data Scientist',
+      title: 'Co-Founder & AI Architect',
       image: './founder.jpg',
       description: `Meet Vishruth, a seasoned data science and artificial intelligence professional. With a Master's degree in Data Science, Vishruth excels at turning complex datasets into clear, actionable insights. His skills extend beyond data analysis to a deep passion for machine learning and deep learning algorithms.`,
       additionalInfo: `Vishruth is part of a forward-thinking ZebiOps team at the forefront of AI innovation. He specializes in tackling challenging problems and developing intelligent, scalable AI solutions that significantly enhance model refinement. Always staying updated with the latest technological trends, He is ready to take on new challenges in the ever-evolving landscape of data science, making the journey through data both insightful and enjoyable.`
     },
     {
       name: 'Kishor Kumar Naik P',
-      title: 'Co-founder',
+      title: 'Co-Founder & AI Architect',
       image: './dev.jpg',
       description: `Introducing Kishor Kumar Naik P, a distinguished professional in the field of data science and artificial intelligence. With a Master's degree in Data Science, Kishor possesses a remarkable ability to convert complex datasets into actionable insights. His expertise extends beyond data analysis, with a strong enthusiasm for machine learning and deep learning algorithms and a penchant for crafting the perfect cup of coffee.`,
       additionalInfo: `At ZebiOps Technology, I'm honored to be part of a pioneering team that is cutting edge on AI innovation. He excels in addressing challenging problems and developing intelligent, scalable AI solutions that have a tangible impact on refining models and staying abreast of the latest technological trends, consistently ready to embrace new adventures in the ever-evolving landscape of data science.`

@@ -8,7 +8,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FormModal from './TryBeatModal';
 
-const Herosections = () => {
+const Herosections = ({projectsRef}) => {
+
+  const handleScroll = (ref) => {
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -58,8 +64,9 @@ const Herosections = () => {
                 <BackgroundAudioPlayer />
                 <button
                   className="z-10 bg-gradient-to-l border-l-4 border-r-4 border-pink-400 border-opacity-40 from-pink-500/5 to-pink-500/20 text-white hover:font-semibold hover:text-2xl transition-all font-normal py-2 px-6 sm:px-10 md:py-3 md:px-12 lg:py-4 lg:px-16 rounded-lg focus:outline-none"
+                  onClick={() => handleScroll(projectsRef)}
                 >
-                  Product
+                  Solution
                 </button>
                 {isModalVisible && <FormModal onClose={handleCloseModal} />}
                 <ToastContainer position="bottom-right" />

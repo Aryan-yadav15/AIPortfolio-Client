@@ -2,7 +2,7 @@ import React from 'react';
 import Herosections from './sections/Herosections';
 import BackgroundAudioPlayer from './BackgroundAudio.jsx'; // Import your BackgroundAudio component
 
-const Homepage = ({ contactRef }) => {
+const Homepage = ({ contactRef,projectsRef }) => {
   const handleScroll = (ref) => {
     if (ref && ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -31,7 +31,7 @@ const Homepage = ({ contactRef }) => {
         </div>
 
         <section id="hero">
-          <Herosections />
+          <Herosections projectsRef={projectsRef} />
         </section>
       </section>
     </div>

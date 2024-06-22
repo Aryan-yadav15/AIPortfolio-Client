@@ -31,7 +31,8 @@ const Technology = () => {
                         imgHeight: 90,
                         title: "Security",
                         description: "ZebiOps SmartHome Solution",
-                        text: "Both ZORA and ZOSS are built with a strong focus on security. Data encryption, secure access controls, and regular security updates ensure that user information is protected from unauthorized access and cyber threats."
+                        text: "Both ZORA and ZOSS are built with a strong focus on security. Data encryption, secure access controls, and regular security updates ensure that user information is protected from unauthorized access and cyber threats.",
+                        color: "#f024ff" // Assigning a specific color code here (e.g., red)
                     },
                     {
                         imgSrc: "/connection1.png",
@@ -39,7 +40,8 @@ const Technology = () => {
                         imgHeight: 70,
                         title: "Cutting-Edge AI",
                         description: "ZebiOps SmartHome Solution",
-                        text: "ZORA and ZOSS leverage the latest advancements in artificial intelligence and machine learning to deliver personalized and efficient services. By learning user preferences and behavior patterns, these systems provide tailored responses and anticipate user needs."
+                        text: "ZORA and ZOSS leverage the latest advancements in artificial intelligence and machine learning to deliver personalized and efficient services. By learning user preferences and behavior patterns, these systems provide tailored responses and anticipate user needs.",
+                        color: "#24ffba" // Assigning another color code here (e.g., green)
                     },
                     {
                         imgSrc: "/fingerprint.png",
@@ -47,7 +49,8 @@ const Technology = () => {
                         imgHeight: 70,
                         title: "Privacy",
                         description: "ZebiOps SmartHome Solution",
-                        text: "User privacy is a top priority for ZebiOps Technology. ZORA and ZOSS adhere to strict privacy policies, ensuring that personal data is handled with the utmost care. Users have full control over their data, including options for anonymization and the ability to manage data-sharing preferences."
+                        text: "User privacy is a top priority for ZebiOps Technology. ZORA and ZOSS adhere to strict privacy policies, ensuring that personal data is handled with the utmost care. Users have full control over their data, including options for anonymization and the ability to manage data-sharing preferences.",
+                        color: "#ffa024" // Assigning another color code here (e.g., blue)
                     }
                 ].map((item, index) => (
                     <div key={index} className="flex-1">
@@ -56,8 +59,8 @@ const Technology = () => {
                                 <div className="flex flex-col items-center text-center p-5 xlg:px-20">
                                     <img src={item.imgSrc} alt="" width={item.imgWidth} height={item.imgHeight} />
                                     <h2 className="text-5xl bg-gradient-custom bg-clip-text text-transparent mt-5">{item.title}</h2>
-                                    <p className='text-xl mt-2'>{item.description}</p>
-                                    <p className='text-gray-300 mt-5'>{item.text}</p>
+                                    <p className="text-xl mt-2 opacity-75" style={{ color: item.color }}>{item.description}</p>
+                                    <p className="text-gray-300 mt-5 ">{item.text}</p>
                                 </div>
                             </div>
                         </div>

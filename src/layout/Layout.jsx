@@ -49,6 +49,7 @@ const Layout = () => {
                             <div ref={homepageRef}>
                                 <Homepage
                                     contactRef={contactRef}
+                                    projectsRef={projectsRef}
                                 />
                             </div>
                             <div ref={aboutRef}>

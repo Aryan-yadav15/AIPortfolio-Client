@@ -45,11 +45,14 @@ const Layout = () => {
                             aboutRef={aboutRef}
                             contactRef={contactRef}
                             projectsRef={projectsRef}
+                            founderRef={founderRef}
+                            overviewRef={overviewRef}
                         />
                         <div className="px-5 lg:px-16 xlg:px-32 py-5 sm:flex sm:flex-col">
                             <div ref={homepageRef}>
                                 <Homepage
                                     contactRef={contactRef}
+                                    homepageRef={homepageRef}
                                     overviewRef={overviewRef}
                                 />
                             </div>

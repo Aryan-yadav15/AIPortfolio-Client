@@ -30,7 +30,7 @@ const Technology = () => {
                         imgWidth: 90,
                         imgHeight: 90,
                         title: "Security",
-                        description: "ZebiOps SmartHome Solution",
+                        description: "Protecting User Data",
                         text: "Both ZORA and ZOSS are built with a strong focus on security. Data encryption, secure access controls, and regular security updates ensure that user information is protected from unauthorized access and cyber threats.",
                         color: "#f024ff" // Assigning a specific color code here (e.g., red)
                     },
@@ -39,7 +39,7 @@ const Technology = () => {
                         imgWidth: 70,
                         imgHeight: 70,
                         title: "Cutting-Edge AI",
-                        description: "ZebiOps SmartHome Solution",
+                        description: "AI for Tailored Efficiency",
                         text: "ZORA and ZOSS leverage the latest advancements in artificial intelligence and machine learning to deliver personalized and efficient services. By learning user preferences and behavior patterns, these systems provide tailored responses and anticipate user needs.",
                         color: "#24ffba" // Assigning another color code here (e.g., green)
                     },
@@ -48,7 +48,7 @@ const Technology = () => {
                         imgWidth: 70,
                         imgHeight: 70,
                         title: "Privacy",
-                        description: "ZebiOps SmartHome Solution",
+                        description: "Safeguarding User Privacy",
                         text: "User privacy is a top priority for ZebiOps Technology. ZORA and ZOSS adhere to strict privacy policies, ensuring that personal data is handled with the utmost care. Users have full control over their data, including options for anonymization and the ability to manage data-sharing preferences.",
                         color: "#ffa024" // Assigning another color code here (e.g., blue)
                     }

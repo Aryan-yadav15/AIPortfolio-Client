@@ -70,17 +70,17 @@ const Founders = () => {
           </h1>
         </div>
       </div>
-      <div className="relative overflow-hidden bg-gray-200 rounded-lg" style={{ height: maxHeight }}>
-        <motion.div 
+      <div className="relative overflow-hidden bg-gray-200 rounded-lg">
+        <motion.div
           className="flex"
-          style={{ 
+          style={{
             width: `${founders.length * 100}%`,
             transform: `translateX(-${currentIndex * (100 / founders.length)}%)`
           }}
           transition={{ duration: 1.5, type: 'tween' }}
         >
           {founders.map((founder, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               className="w-full flex-shrink-0"
               style={{ width: `${100 / founders.length}%` }}
@@ -89,7 +89,16 @@ const Founders = () => {
               <div className="flex flex-col lg:flex-row bg-gray-200 items-center">
                 <div className="lg:w-1/2 p-10 flex justify-center items-center">
                   <div className="aspect-w-3 aspect-h-4 relative">
-                    <img src={founder.image} alt={founder.name} className="object-cover rounded-lg shadow-lg" />
+                    <img
+                      src={founder.image}
+                      alt={founder.name}
+                      className="object-cover rounded-lg shadow-lg"
+                      style={{
+                        width: '80%',  // Decrease width as per your requirement
+                        maxWidth: '100%', // Ensure image doesn't exceed its container
+                        maxHeight: '100%' // Ensure image doesn't exceed its container
+                      }}
+                    />
                   </div>
                 </div>
                 <div className="lg:w-1/2 text-gray-800 flex flex-col p-5 lg:p-10 lg:py-5 overflow-y-auto">
@@ -116,8 +125,8 @@ const Founders = () => {
         </motion.div>
         <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-4">
           {founders.map((_, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`h-3 w-3 rounded-full mx-1 cursor-pointer ${currentIndex === index ? 'bg-gray-800' : 'bg-gray-400'}`}
               onClick={() => handleDotClick(index)}
             ></div>

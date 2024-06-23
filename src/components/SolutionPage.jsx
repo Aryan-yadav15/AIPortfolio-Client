@@ -21,13 +21,13 @@ const SolutionPage = () => {
         const updateImageSource = () => {
             const screenWidth = window.innerWidth;
             if (screenWidth >= 1600) { // xl: min-width 1900px
-              setImageSrc('/Case 6.png');
+              setImageSrc('/Case 1.png');
               setImageSrc2('/phoeXLg.png');
             } else if (screenWidth >= 1000) { // md: min-width 768px
-              setImageSrc('/3Stack.png');
+              setImageSrc('/2Stack.png');
               setImageSrc2('/PhoneVert.png');
             } else {
-              setImageSrc('/Case 5.png');
+              setImageSrc('/Case 1.png');
               setImageSrc2('/PhoneHor.png');
             }
           };

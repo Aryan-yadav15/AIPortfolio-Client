@@ -130,7 +130,7 @@ const AboutPage = ({ founderRef }) => {
                                                 <img src="/flag.png" alt="icon" width={70} height={70} />
                                                 <section className="flex flex-col gap-2">
                                                     <h2 className="text-4xl bg-gradient-custom bg-clip-text text-transparent">Our Mission </h2>
-                                                    <p className="text-xl">ZebiOps SmartHome Solution</p>
+                                                    <p className="text-xl text-pink-600">Enhancing Daily Efficiency with ZebiOps </p>
                                                 </section>
                                                 <section>
                                                     <p className="text-gray-300 text-justify">
@@ -148,7 +148,7 @@ const AboutPage = ({ founderRef }) => {
                                                 <img src="/eye.png" alt="icon" width={70} height={70} />
                                                 <section className="flex flex-col gap-2">
                                                     <h2 className="text-4xl bg-gradient-custom bg-clip-text text-transparent">Our Vision</h2>
-                                                    <p className="text-xl">ZebiOps SmartHome Solution</p>
+                                                    <p className="text-xl text-purple-500">Pioneering a Connected Future: ZebiOps AI</p>
                                                 </section>
                                                 <section>
                                                     <p className="text-gray-300 text-justify">

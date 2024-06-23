@@ -25,7 +25,7 @@ const ProductCard = ({ imageSrc, title, features }) => (
             <span key={index} className="flex items-center gap-1 ml-4 w-full">
               <span className="text-xl">○</span>
               <div className="flex flex-col w-full">
-                <span className={`font-semibold ${title === 'ZORA' ? 'text-purple-200' : 'text-sky-200'}`}>
+                <span className={`font-semibold ${title === 'ZORA' ? 'text-purple-300' : 'text-sky-200'}`}>
                   {feature.title}:
                 </span>
                 <span className="ml-1 text-justify w-full">{feature.description}</span>

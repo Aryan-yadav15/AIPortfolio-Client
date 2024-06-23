@@ -35,7 +35,7 @@ const Founders = () => {
   const startInterval = () => {
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % founders.length);
-    }, 5000);
+    }, 3000);
   };
 
   const resetInterval = () => {

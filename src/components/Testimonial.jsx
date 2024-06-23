@@ -36,6 +36,20 @@ export function Testimonial() {
   },
   {
     quote:
+      "I found it to be a customer-centric product and the software application is wonderful. The aesthetics are really good and more features down the line, it looks absolutely breakthrough.",
+    name: "VP ",
+    title: "Lodha Group",
+    productCategory: "ZOSS"
+  },
+  {
+    quote:
+      "This is going to be a major breakthrough. That is for sure. Because there is no single entity who is actually giving you all the connections. So if at all you are able to make it, then it is going to be surely a breakthrough.",
+    name: "Head MEP",
+    title: "Commercial Real Estate Dev",
+    productCategory: "ZOSS"
+  },
+  {
+    quote:
       "ZOSS has taken home automation to the next level. The seamless integration with ZORA for real-time updates and control is simply amazing. My home feels smarter and safer!",
     name: "Rahul M.",
     title: "Revolutionizing Smart Homes",
@@ -50,13 +64,6 @@ export function Testimonial() {
   },
   {
     quote:
-      "The combination of ZORA and ZOSS has made my life so much easier. From managing daily tasks to controlling my smart home, everything is just a voice command away. Truly efficient!",
-    name: "Amit R.",
-    title: "Efficiency at its best",
-    productCategory: "ZORA & ZOSS"
-  },
-  {
-    quote:
       "ZOSS's intelligent sensors and ZORA's real-time data updates provide an unparalleled smart home experience. It's like living in the future. Excellent work by ZebiOps!",
     name: "Sunita P",
     title: "Innovative and Smart",
@@ -64,23 +71,16 @@ export function Testimonial() {
   },
   {
     quote:
+      "The combination of ZORA and ZOSS has made my life so much easier. From managing daily tasks to controlling my smart home, everything is just a voice command away. Truly efficient!",
+    name: "Amit R.",
+    title: "Efficiency at its best",
+    productCategory: "ZORA & ZOSS"
+  },
+  {
+    quote:
       "It's a lifestyle changing product and people in India need to adopt it. A part of this I’ve seen while residing in Middle East which will change the course of leading life in India. It seems to be a great product with innovative features.",
     name: "VP MEP",
     title: "Oberoi Realty",
-    productCategory: "ZOSS"
-  },
-  {
-    quote:
-      "I found it to be a customer-centric product and the software application is wonderful. The aesthetics are really good and more features down the line, it looks absolutely breakthrough.",
-    name: "VP ",
-    title: "Lodha Group",
-    productCategory: "ZOSS"
-  },
-  {
-    quote:
-      "This is going to be a major breakthrough. That is for sure. Because there is no single entity who is actually giving you all the connections. So if at all you are able to make it, then it is going to be surely a breakthrough.",
-    name: "Head MEP",
-    title: "Commercial Real Estate Dev",
     productCategory: "ZOSS"
   },
   {

@@ -71,12 +71,14 @@ const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
             <div className="bg-gray-100 p-2 md:p-8 flex flex-col gap-2">
               <div className='flex w-full justify-between font-semibold text-2xl'>
                 <p className="text-lg font-medium text-gray-800">{testimonial.name}</p>
-                <p className={testimonial.productCategory === "ZORA" ? 'text-purple-400' : 'text-sky-400'}>
-                  {testimonial.productCategory}
-                </p>
+                <div className={`rounded-md ${testimonial.productCategory === "ZORA" ? 'bg-purple-500' : 'bg-sky-500'}`}>
+                  <p className='px-3' >
+                    {testimonial.productCategory}
+                  </p>
+                </div>
               </div>
               <div className="w-full">
-                <p className="inline-block p-2  bg-orange-800 rounded-lg">{testimonial.title}</p>
+                <p className="inline-block text-orange-700 opacity-70 rounded-md">{testimonial.title}</p>
               </div>
               <p className="text-gray-600 max-h-24 overflow-hidden">{testimonial.quote}</p>
               <button

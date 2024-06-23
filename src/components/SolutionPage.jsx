@@ -52,7 +52,7 @@ const SolutionPage = () => {
 
                         <span className="animate-slide bg-gradient-to-r from-purple-500/20 to-purple-500/5 hover:bg-gradient-to-r text-white px-2 py-1 border-l-4 border-purple-700 rounded-none focus:outline-none ml-3"> ZORA and ZOSS</span>
                         together creates seamless
-                        <span className="animate-slide bg-gradient-to-r from-orange-500/20 to-purple-500/5 hover:bg-gradient-to-r text-white px-2 py-1 border-l-4 border-orange-700 rounded-none focus:outline-none ml-3">Intelligent ecosystem </span>
+                        <span className="animate-slide bg-gradient-to-r from-sky-500/20 to-purple-500/5 hover:bg-gradient-to-r text-white px-2 py-1 border-l-4 border-sky-700 rounded-none focus:outline-none ml-3">Intelligent ecosystem </span>
                     </h1>
                 </div>
             </div>

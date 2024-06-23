@@ -86,7 +86,7 @@ const Navbar = ({ aboutRef, contactRef, projectsRef, founderRef, overviewRef, ho
       window.scrollTo({ top: scrollPositionRef.current, behavior: 'smooth' });
       scrollPositionRef.current = 0; // Reset scroll position ref
     }
-  }, [homepageRef, aboutRef, projectsRef, overviewRef, founderRef, contactRef]);
+  }, []);
 
   return (
     <motion.nav
@@ -107,6 +107,11 @@ const Navbar = ({ aboutRef, contactRef, projectsRef, founderRef, overviewRef, ho
           </div>
         </div>
         <ul className={`menu-panel lg:flex lg:items-center lg:justify-center rounded-lg gap-10 text-lg px-10 transition duration-300 ease-in-out hover:bg-white hover:text-black backdrop-blur-md backdrop-filter border-[1px] border-gray-500 ${isOpen ? 'flex flex-col mt-5 items-center absolute top-16 left-1/2 transform -translate-x-1/2 backdrop-blur-md backdrop-filter border-[1px] border-gray-500 rounded-lg shadow-lg p-5' : 'hidden'}`}>
+          <li className='hidden lg:flex'>
+            <a href="#home" onClick={(e) => handleScrollToSection(homepageRef, e)}>
+              <img src="/logo-horizontal-light.png" alt="" className='xlg:w-64' />
+            </a>
+          </li>
           <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition duration-100">
             <a href="#about" onClick={(e) => handleScrollToSection(aboutRef, e)}>About</a>
           </li>
@@ -118,6 +123,9 @@ const Navbar = ({ aboutRef, contactRef, projectsRef, founderRef, overviewRef, ho
           </li>
           <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition duration-100">
             <a href="#team" onClick={(e) => handleScrollToSection(founderRef, e)}>Team</a>
+          </li>
+          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition duration-100">
+            <a href="#team" onClick={(e) => handleScrollToSection(contactRef, e)}>Contact</a>
           </li>
         </ul>
       </div>

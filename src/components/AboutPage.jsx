@@ -15,11 +15,26 @@ const AboutPage = ({ founderRef }) => {
         }
     };
 
-    const clients = [...new Array(10)].map((client, index) => ({
-        key: index, // Unique key for each client object
-        text: "Building the future of convenience"
-      }));
-      
+
+    const clientTexts = [
+        "Revolutionizing personal productivity with AI",
+        "Innovative AI solutions for a smarter home",
+        "Enhancing efficiency through intelligent automation",
+        "Leading the future of AI-driven home automation",
+        "Empowering lives with advanced AI technology",
+        "Transforming homes with smart solutions",
+        "Pioneering personal and home automation",
+        "Delivering cutting-edge AI for everyday tasks",
+        "Redefining convenience with AI innovation",
+        "Inspiring smart living through AI"
+    ];
+    
+
+    const clients = clientTexts.map((text, index) => ({
+        key: index,
+        text: text
+    }));
+
 
     const ref = useRef(null); // Create a ref using useRef
 
@@ -127,13 +142,13 @@ const AboutPage = ({ founderRef }) => {
                                     <div className="border border-gray-700 rounded-lg lg:p-10 h-full">
                                         <div className="bg-gradient-to-t from-transparent to-white/10 rounded-lg p-2 lg:p-5 h-full flex flex-col justify-between">
                                             <div className="flex flex-col items-center text-center gap-5">
-                                                <img src="/flag.png" alt="icon" width={70} height={70} />
+                                                <img src="/flag.png" alt="icon" width={70} height={70} className="opacity-80" />
                                                 <section className="flex flex-col gap-2">
                                                     <h2 className="text-4xl bg-gradient-custom bg-clip-text text-transparent">Our Mission </h2>
-                                                    <p className="text-xl text-pink-600">Enhancing Daily Efficiency with ZebiOps </p>
+                                                    <p className="text-xl text-pink-500">Enhancing Daily Efficiency</p>
                                                 </section>
                                                 <section>
-                                                    <p className="text-gray-300 text-justify">
+                                                    <p className="text-gray-300 text-lg text-justify">
                                                         Our mission is to create innovative AI solutions that make daily life easier and more efficient. We aim to empower people to be more productive and organized.
                                                     </p>
                                                 </section>
@@ -145,13 +160,13 @@ const AboutPage = ({ founderRef }) => {
                                     <div className="border border-gray-700 rounded-lg lg:p-10 h-full">
                                         <div className="bg-gradient-to-t from-transparent to-white/10 rounded-lg p-2 lg:p-5 h-full flex flex-col justify-between">
                                             <div className="flex flex-col items-center text-center gap-5">
-                                                <img src="/eye.png" alt="icon" width={70} height={70} />
+                                                <img src="/eye.png" alt="icon" width={70} height={70} className="opacity-80" />
                                                 <section className="flex flex-col gap-2">
                                                     <h2 className="text-4xl bg-gradient-custom bg-clip-text text-transparent">Our Vision</h2>
-                                                    <p className="text-xl text-purple-500">Pioneering a Connected Future: ZebiOps AI</p>
+                                                    <p className="text-xl text-purple-500">Pioneering a Connected Future</p>
                                                 </section>
                                                 <section>
-                                                    <p className="text-gray-300 text-justify">
+                                                    <p className="text-gray-300 text-lg text-justify">
                                                         We envision a future where our AI and smart home technologies seamlessly integrate into everyday life, providing unmatched convenience and enhancing the quality of life for users worldwide.
                                                     </p>
                                                 </section>
@@ -165,10 +180,7 @@ const AboutPage = ({ founderRef }) => {
                     </section>
                 </div>
                 <InfiniteMovingCards
-                    className="mb-10 mt-20"
-                    items={clients}
-                    direction="right"
-                    speed="slow"
+                   
                 />
             </motion.div>
         </div>

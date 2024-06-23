@@ -65,7 +65,7 @@ const Footer = ({ aboutRef, contactRef, projectsRef }) => {
                         <section className="container mx-auto px-4 lg:px-10 py-8 lg:py-16 bg-gray-100 rounded-lg shadow-md">
                             <h2 className="text-3xl text-center text-gray-800 font-medium mb-8">What We Offer</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                <div className="flex flex-col gap-4 items-center justify-center border border-gray-300 rounded-lg p-4 hover:shadow-lg bg-gradient-to-r from-purple-100 to-pink-100 relative overflow-hidden">
+                                <div className="flex flex-col gap-4 items-center justify-center border border-gray-300 rounded-lg p-4 hover:shadow-lg bg-gradient-to-r from-purple-100 to-purple-200 relative overflow-hidden">
                                     <i className="fas fa-info-circle text-4xl text-purple-500 z-10"></i>
                                     <h3 className="text-xl text-gray-800 font-medium mt-2 z-10">Our Info</h3>
                                     <p className="text-gray-600 text-sm text-center italic z-10">Discover more about us</p>
@@ -90,7 +90,7 @@ const Footer = ({ aboutRef, contactRef, projectsRef }) => {
                                     </svg>
                                 </div>
 
-                                <div className="flex flex-col gap-4 items-center justify-center border border-gray-300 rounded-lg p-4 hover:shadow-lg bg-gradient-to-r from-red-100 to-red-200 relative overflow-hidden">
+                                <div className="flex flex-col gap-4 items-center justify-center border border-gray-300 rounded-lg p-4 hover:shadow-lg bg-gradient-to-r from-sky-100 to-sky-200 relative overflow-hidden">
                                     <i className="fas fa-book-open text-4xl text-red-500 z-10"></i>
                                     <h3 className="text-xl text-gray-800 font-medium mt-2 z-10">Our Page</h3>
                                     <div className="text-gray-600 text-base w-full z-10">

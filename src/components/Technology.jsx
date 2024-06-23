@@ -57,7 +57,7 @@ const Technology = () => {
                         <div className="p-5 xlg:px-1 h-full">
                             <div className="border-[1px] border-gray-700 rounded-lg bg-gradient-to-t from-transparent to-white/10 h-full flex flex-col justify-between">
                                 <div className="flex flex-col items-center text-center p-5 xlg:px-20">
-                                    <img src={item.imgSrc} alt="" width={item.imgWidth} height={item.imgHeight} />
+                                    <img src={item.imgSrc} alt="" width={item.imgWidth} height={item.imgHeight} className='opacity-80' />
                                     <h2 className="text-5xl bg-gradient-custom bg-clip-text text-transparent mt-5">{item.title}</h2>
                                     <p className="text-xl mt-2 opacity-75" style={{ color: item.color }}>{item.description}</p>
                                     <p className="text-gray-300 mt-5 ">{item.text}</p>

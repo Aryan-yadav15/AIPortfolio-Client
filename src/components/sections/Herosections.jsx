@@ -47,7 +47,7 @@ const Herosections = ({overviewRef}) => {
                       Revolutionizing
                     </span>{" "}
                     Your Digital Life{" "} 
-                    <span className="bg-gradient-to-r animate-slide from-orange-500/20 to-purple-500/5 hover:bg-gradient-to-r text-white px-2 py-1 border-l-4 border-orange-700 rounded-none focus:outline-none ml-3">
+                    <span className="bg-gradient-to-r animate-slide from-sky-500/20 to-purple-500/5 hover:bg-gradient-to-r text-white px-2 py-1 border-l-4 border-sky-700 rounded-none focus:outline-none ml-3">
                       With AI
                     </span>
                   </h1>

@@ -1,11 +1,29 @@
-import { cn } from '../../utils/cn.js';
 import React, { useEffect, useRef, useState } from 'react';
+import { cn } from '../../utils/cn.js';
 import './InfiniteMovingCards.css'; // Ensure you import the CSS file
 
+const clientTexts = [
+  "Building the future of convenience",
+  "Innovating with excellence",
+  "Shaping tomorrow's solutions",
+  "Pioneering new possibilities",
+  "Leading the way in technology",
+  "Transforming industries",
+  "Empowering your business",
+  "Delivering unmatched quality",
+  "Redefining standards",
+  "Inspiring creativity"
+];
+
+const clients = clientTexts.map((text, index) => ({
+  key: index,
+  text: text
+}));
+
 export const InfiniteMovingCards = ({
-  items,
+  items = clients,
   direction = 'right',
-  speed = 'fast',
+  speed = 'slow',
   pauseOnHover = true,
   className,
 }) => {
@@ -31,9 +49,9 @@ export const InfiniteMovingCards = ({
   const getSpeed = () => {
     if (scrollerRef.current) {
       if (speed === 'fast') {
-        scrollerRef.current.style.setProperty('--animation-duration', '20s');
+        scrollerRef.current.style.setProperty('--animation-duration', '80s');
       } else if (speed === 'normal') {
-        scrollerRef.current.style.setProperty('--animation-duration', '40s');
+        scrollerRef.current.style.setProperty('--animation-duration', '80s');
       } else {
         scrollerRef.current.style.setProperty('--animation-duration', '80s');
       }
@@ -41,7 +59,6 @@ export const InfiniteMovingCards = ({
   };
 
   function addAnimation() {
-
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
 
@@ -55,7 +72,6 @@ export const InfiniteMovingCards = ({
     getDirection();
     getSpeed();
     setStart(true);
-
   }
 
   return (

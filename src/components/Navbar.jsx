@@ -8,6 +8,7 @@ const Navbar = ({ aboutRef, contactRef, projectsRef, founderRef, overviewRef, ho
   const [scrollingUp, setScrollingUp] = useState(true);
   const controls = useAnimation();
   const scrollPositionRef = useRef(0); // Ref to store scroll position
+  const [hover, setHover] = useState(false);
 
   const handleScrollToSection = (ref, e) => {
     e.preventDefault(); // Prevent default behavior of anchor tag
@@ -106,10 +107,13 @@ const Navbar = ({ aboutRef, contactRef, projectsRef, founderRef, overviewRef, ho
             </button>
           </div>
         </div>
-        <ul className={`menu-panel lg:flex lg:items-center lg:justify-center rounded-lg gap-10 text-lg px-10 transition duration-300 ease-in-out hover:bg-gray-50 hover:text-black backdrop-blur-md backdrop-filter border-[1px] border-gray-500 ${isOpen ? 'flex flex-col mt-5 items-center absolute top-16 left-1/2 transform -translate-x-1/2 backdrop-blur-md backdrop-filter border-[1px] border-gray-500 rounded-lg shadow-lg p-5' : 'hidden'}`}>
+        <ul className={`menu-panel lg:flex lg:items-center lg:justify-center rounded-lg gap-10 text-lg px-10 transition duration-300 ease-in-out hover:bg-gray-50 hover:text-black backdrop-blur-md backdrop-filter border-[1px] border-gray-500 ${isOpen ? 'flex flex-col mt-5 items-center absolute top-16 left-1/2 transform -translate-x-1/2 backdrop-blur-md backdrop-filter border-[1px] border-gray-500 rounded-lg shadow-lg p-5' : 'hidden'}`}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}>
           <li className='hidden lg:flex'>
             <a href="#home" onClick={(e) => handleScrollToSection(homepageRef, e)}>
-              <img src="/logo-horizontal-light.png" alt="" className='xlg:w-64' />
+              <img src="/logo-horizontal-light.png" alt="Default Logo" className={`xlg:w-64 ${hover ? 'hidden' : 'block'}`} />
+              <img src="/logo-horizontal-dark.png" alt="Hovered Logo" className={`xlg:w-64 ${hover ? 'block' : 'hidden'}`} />
             </a>
           </li>
           <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition duration-100">

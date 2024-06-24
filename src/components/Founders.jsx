@@ -13,8 +13,8 @@ const Founders = () => {
       name: 'Prashant S B',
       title: 'Founder & CEO',
       image: './ceo.jpg',
-      description: `Prashant S B, the visionary founder of ZebiOps Technology Private Limited, brings over 21 years of corporate experience to the table. With an impressive educational background, holding an MBA in General Management and a BTech in Computer Science and Engineering, Prashant has honed his expertise across diverse industries.`,
-      additionalInfo: `He has held pivotal roles in renowned companies such as Amazon, EMC Data Storage Systems, Honeywell, McAfee, BAeHAL, and Spirent Communications. His extensive domain experience spans Embedded Systems, Aerospace, Storage, Antivirus, Networking, and Ecommerce, making him a dynamic and seasoned leader in the tech industry. Under Prashant's guidance, ZebiOps Technology is poised to revolutionize personal productivity and home automation with its cutting-edge AI solutions, ZORA and ZOSS. His unwavering commitment to innovation and excellence drives the company's mission to create intelligent, user-centric technologies that transform everyday interactions.`
+      description: `Prashant S B, the visionary founder of ZebiOps Technology Private Limited, brings over 21 years of corporate experience to the table. With an MBA in General Management and a BTech in Computer Science and Engineering, Prashant has honed his expertise across diverse industries. He has held pivotal roles in renowned companies like Amazon, EMC Data Storage Systems, Honeywell, McAfee, BAeHAL, and Spirent Communications. His extensive experience in Embedded Systems, Aerospace, Storage, Antivirus, Networking, and Ecommerce makes him a dynamic leader in the tech industry.`,
+      additionalInfo: `Under Prashant's guidance, ZebiOps Technology is set to revolutionize personal productivity and home automation with its AI solutions, ZORA and ZOSS. His unwavering commitment to innovation and excellence drives the company's mission to create intelligent, user-centric technologies that transform everyday interactions.`
     },
     {
       name: 'Vishruth',
@@ -25,7 +25,7 @@ const Founders = () => {
     },
     {
       name: 'Kishor Kumar Naik P',
-      title: 'Co-Founder & AI Architect',
+      title: 'AI Researcher',
       image: './dev.jpg',
       description: `Introducing Kishor Kumar Naik P, a distinguished professional in the field of data science and artificial intelligence. With a Master's degree in Data Science, Kishor possesses a remarkable ability to convert complex datasets into actionable insights. His expertise extends beyond data analysis, with a strong enthusiasm for machine learning and deep learning algorithms and a penchant for crafting the perfect cup of coffee.`,
       additionalInfo: `At ZebiOps Technology, I'm honored to be part of a pioneering team that is cutting edge on AI innovation. He excels in addressing challenging problems and developing intelligent, scalable AI solutions that have a tangible impact on refining models and staying abreast of the latest technological trends, consistently ready to embrace new adventures in the ever-evolving landscape of data science.`
@@ -87,21 +87,21 @@ const Founders = () => {
               ref={(el) => slidesRef.current[index] = el}
             >
               <div className="flex flex-col lg:flex-row bg-gray-200 items-center">
-                <div className="lg:w-1/2 p-10 flex justify-center items-center">
+                <div className="lg:flex-1 p-10 flex justify-center items-center">
                   <div className="aspect-w-3 aspect-h-4 relative">
                     <img
                       src={founder.image}
                       alt={founder.name}
                       className="object-cover rounded-lg shadow-lg"
                       style={{
-                        width: '80%',  // Decrease width as per your requirement
+                        width: '100%',  // Decrease width as per your requirement
                         maxWidth: '100%', // Ensure image doesn't exceed its container
                         maxHeight: '100%' // Ensure image doesn't exceed its container
                       }}
                     />
                   </div>
                 </div>
-                <div className="lg:w-1/2 text-gray-800 flex flex-col p-5 lg:p-10 lg:py-5 overflow-y-auto">
+                <div className="lg:flex-2 text-gray-800 flex flex-col p-5 lg:p-10 lg:py-5 overflow-y-auto">
                   <div className='mb-8 lg:mb-10'>
                     <img src="/logo-horizontal-dark.png" alt="Company Logo" />
                     <div className='h-[5px] bg-emerald-600'></div>

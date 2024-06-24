@@ -116,19 +116,19 @@ const Navbar = ({ aboutRef, contactRef, projectsRef, founderRef, overviewRef, ho
               <img src="/logo-horizontal-dark.png" alt="Hovered Logo" className={`xlg:w-64 ${hover ? 'block' : 'hidden'}`} />
             </a>
           </li>
-          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition duration-100">
+          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition-all duration-100">
             <a href="#about" onClick={(e) => handleScrollToSection(aboutRef, e)}>About</a>
           </li>
-          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition duration-100">
+          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition-all duration-100">
             <a href="#solution" onClick={(e) => handleScrollToSection(projectsRef, e)}>Solution</a>
           </li>
-          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition duration-100">
+          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition-all duration-100">
             <a href="#features" onClick={(e) => handleScrollToSection(overviewRef, e)}>Features</a>
           </li>
-          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition duration-100">
+          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition-all duration-100">
             <a href="#team" onClick={(e) => handleScrollToSection(founderRef, e)}>Team</a>
           </li>
-          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition duration-100">
+          <li className="p-2 hover:bg-transparent hover:text-gray-500 hover:font-semibold hover:text-xl transition-all duration-100">
             <a href="#team" onClick={(e) => handleScrollToSection(contactRef, e)}>Contact</a>
           </li>
         </ul>

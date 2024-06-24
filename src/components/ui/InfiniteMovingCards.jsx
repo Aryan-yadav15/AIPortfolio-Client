@@ -8,11 +8,8 @@ const clientTexts = [
   "Shaping tomorrow's solutions",
   "Pioneering new possibilities",
   "Leading the way in technology",
-  "Transforming industries",
-  "Empowering your business",
   "Delivering unmatched quality",
   "Redefining standards",
-  "Inspiring creativity"
 ];
 
 const clients = clientTexts.map((text, index) => ({

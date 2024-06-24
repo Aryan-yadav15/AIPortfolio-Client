@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 import Modal from './TestimonialModal'; // Adjust the import to the correct path
 
 const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
@@ -57,24 +56,25 @@ const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
 
   return (
     <div className="relative w-full overflow-hidden">
-      <div
-        ref={carouselRef}
-        className="flex"
-      >
-        {testimonials.concat(testimonials[0]).map((testimonial, index) => (
+      <div ref={carouselRef} className="flex">
+        {testimonials.map((testimonial, index) => (
           <div
             key={index}
             className="flex-shrink-0 flex flex-col items-center px-4 py-8 mx-2 bg-gray-200 rounded-lg shadow-md"
             style={{ width: '500px' }}
           >
-
             <div className="bg-gray-100 p-2 md:p-8 flex flex-col gap-2">
               <div className='flex w-full justify-between font-semibold text-2xl'>
                 <p className="text-lg font-medium text-gray-800">{testimonial.name}</p>
-                <div className={`rounded-md ${testimonial.productCategory === "ZORA" ? 'bg-purple-500' : 'bg-sky-500'}`}>
-                  <p className='px-3' >
-                    {testimonial.productCategory}
-                  </p>
+                <div className='flex space-x-2'>
+                  {testimonial.productCategory.map((category, i) => {
+                    const bgColor = category === "ZORA" ? 'bg-purple-500' : category === "ZOSS" ? 'bg-sky-500' : 'bg-purple-500';
+                    return (
+                      <div key={i} className={`rounded-md ${bgColor}`}>
+                        <p className='px-3'>{category}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <div className="w-full">
@@ -95,7 +95,11 @@ const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
         <Modal onClose={handleCloseModal}>
           <div className="flex flex-col">
             <div className='w-full justify-end'>
-              <p className='text-gray-500'>{selectedTestimonial.productCategory}</p>
+              <div className='flex space-x-2'>
+                {selectedTestimonial.productCategory.map((category, i) => (
+                  <p key={i} className='text-gray-500'>{category}</p>
+                ))}
+              </div>
             </div>
             <div>
               <div className="p-4">
@@ -105,7 +109,6 @@ const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
               </div>
             </div>
           </div>
-
         </Modal>
       )}
     </div>

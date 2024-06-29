@@ -68,10 +68,10 @@ const TestimonialCarousel = ({ testimonials, interval = 10 }) => {
                 <p className="text-lg font-medium text-gray-800">{testimonial.name}</p>
                 <div className='flex space-x-2'>
                   {testimonial.productCategory.map((category, i) => {
-                    const bgColor = category === "ZORA" ? 'bg-purple-500' : category === "ZOSS" ? 'bg-sky-500' : 'bg-purple-500';
+                    const bgColor = category === "ZORA" ? 'bg-purple-300' : category === "ZOSS" ? 'bg-sky-300' : 'bg-purple-300';
                     return (
                       <div key={i} className={`rounded-md ${bgColor}`}>
-                        <p className='px-3'>{category}</p>
+                        <p className='px-3 text-gray-600'>{category}</p>
                       </div>
                     );
                   })}

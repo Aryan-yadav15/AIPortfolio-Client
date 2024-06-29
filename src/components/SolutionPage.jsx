@@ -69,7 +69,7 @@ const SolutionPage = () => {
                                 <div className="p-5 lg:pl-5 lg:pr-10 lg:pt-5 lg:pb-10 w-full lg:w-[50%] lg:p-20">
                                     <div className="flex-1 flex flex-col gap-10">
                                         <div className='flex justify-center lg:justify-start'>
-                                            <img src="/i2.png" alt="" width={70} height={70} />
+                                            <img src="/Ai2.png" alt="" width={70} height={70} />
                                         </div>
                                         <section className='flex flex-col gap-4'>
                                             <h2>
@@ -107,7 +107,7 @@ const SolutionPage = () => {
                                 <div className="p-5 lg:pl-5 lg:pr-10 lg:pt-5 lg:pb-10 w-full lg:w-[50%] lg:p-20">
                                     <div className="flex-1 flex flex-col gap-10">
                                         <div className='flex justify-center lg:justify-start'>
-                                            <img src="/i2.png" alt="" width={70} height={70} />
+                                            <img src="/Iot.png" alt="" width={70} height={70} />
                                         </div>
                                         <section className='flex flex-col gap-4'>
                                             <h2>

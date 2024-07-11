@@ -1,10 +1,22 @@
 import React, { useRef, useState } from 'react'
 import Modal from './sections/Modal';
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 const Footer = ({ aboutRef, contactRef, projectsRef }) => {
 
     const [isModalOpen, setModalOpen] = useState(false);
+
+
+    const scrollPositionRef = useRef(0); // Initialize scrollPositionRef
+
+    const handleScroll = (ref, e) => {
+        e.preventDefault(); // Prevent default behavior of anchor tag
+        if (ref && ref.current) {
+            scrollPositionRef.current = window.scrollY; // Store current scroll position
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     const handleViewMoreClick = (e) => {
         e.preventDefault();
@@ -17,9 +29,9 @@ const Footer = ({ aboutRef, contactRef, projectsRef }) => {
 
     const form = useRef();
     const [formData, setFormData] = useState({
-        name: '',
-        number: '',
-        email: ''
+        from_name: '',
+        from_email: '',
+        from_number: '',
     });
 
     const handleChange = (e) => {
@@ -34,15 +46,15 @@ const Footer = ({ aboutRef, contactRef, projectsRef }) => {
         e.preventDefault();
 
         emailjs
-            .sendForm('service_uid66jz', 'template_431qapa', form.current, 'uXWBgZT1nRdMB3EwV')
+            .sendForm('service_jga96fu', 'template_00czabb', form.current, 'oPyOb5F87lB69PtAr')
             .then(
                 (result) => {
                     console.log('SUCCESS!', result.text);
-                    alert('Email sent successfully!');
+                    toast.success('Email sent successfully!');
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
-                    alert('Failed to send email.');
+                    toast.error('Failed to send email.');
                 }
             );
     };
@@ -71,18 +83,24 @@ const Footer = ({ aboutRef, contactRef, projectsRef }) => {
                                     <p className="text-gray-600 text-sm text-center italic z-10">Discover more about us</p>
                                     <div className="text-gray-600 text-base w-full z-10">
                                         <div className="flex flex-col gap-4">
-                                            <p className="text-lg lg:text-xl font-medium hover:bg-gray-100 p-2 rounded">
-                                                <i className="fas fa-user text-purple-500 mr-2"></i>
-                                                <a href="#" onClick={() => handleScroll(aboutRef)}>About</a>
-                                            </p>
-                                            <p className="text-lg lg:text-xl font-medium hover:bg-gray-100 p-2 rounded">
-                                                <i className="fas fa-envelope text-purple-500 mr-2"></i>
-                                                <a href="#" onClick={() => handleScroll(contactRef)}>Contact</a>
-                                            </p>
-                                            <p className="text-lg lg:text-xl font-medium hover:bg-gray-100 p-2 rounded">
-                                                <i className="fas fa-lightbulb text-purple-500 mr-2"></i>
-                                                <a href="#" onClick={() => handleScroll(projectsRef)}>Solution</a>
-                                            </p>
+                                            <button onClick={(e) => handleScroll(aboutRef, e)}>
+                                                <p className="text-lg lg:text-xl font-medium hover:bg-gray-100 text-start p-2 rounded">
+                                                    <i className="fas fa-user text-purple-500 mr-2"></i>
+                                                    About
+                                                </p>
+                                            </button>
+                                            <button onClick={(e) => handleScroll(contactRef, e)}>
+                                                <p className="text-lg lg:text-xl font-medium hover:bg-gray-100 p-2 text-start rounded">
+                                                    <i className="fas fa-user text-purple-500 mr-2"></i>
+                                                    Contact
+                                                </p>
+                                            </button>
+                                            <button onClick={(e) => handleScroll(projectsRef, e)}>
+                                                <p className="text-lg lg:text-xl font-medium hover:bg-gray-100 p-2 text-start rounded">
+                                                    <i className="fas fa-user text-purple-500 mr-2"></i>
+                                                    Solution
+                                                </p>
+                                            </button>
                                         </div>
                                     </div>
                                     <svg className="absolute inset-0 w-full h-full opacity-20 z-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -114,25 +132,25 @@ const Footer = ({ aboutRef, contactRef, projectsRef }) => {
                                         <form ref={form} onSubmit={sendEmail} className="w-full max-w-md flex flex-col gap-4">
                                             <input
                                                 type="text"
-                                                name="name"
-                                                placeholder="Enter your name"
-                                                value={formData.name}
-                                                onChange={handleChange}
-                                                className="rounded-lg p-3 border text-customDarkGray border-gray-300 focus:border-gray-500 focus:outline-none"
-                                            />
-                                            <input
-                                                type="tel"
-                                                name="number"
-                                                placeholder="Enter your number"
-                                                value={formData.number}
+                                                name="from_name"
+                                                placeholder="Your Name"
+                                                value={formData.from_name}
                                                 onChange={handleChange}
                                                 className="rounded-lg p-3 border text-customDarkGray border-gray-300 focus:border-gray-500 focus:outline-none"
                                             />
                                             <input
                                                 type="email"
-                                                name="email"
-                                                placeholder="Enter your email"
-                                                value={formData.email}
+                                                name="from_email"
+                                                placeholder="Your Email"
+                                                value={formData.from_email}
+                                                onChange={handleChange}
+                                                className="rounded-lg p-3 border text-customDarkGray border-gray-300 focus:border-gray-500 focus:outline-none"
+                                            />
+                                            <input
+                                                type="tel"
+                                                name="from_number"
+                                                placeholder="Your Number"
+                                                value={formData.from_number}
                                                 onChange={handleChange}
                                                 className="rounded-lg p-3 border text-customDarkGray border-gray-300 focus:border-gray-500 focus:outline-none"
                                             />
@@ -143,7 +161,6 @@ const Footer = ({ aboutRef, contactRef, projectsRef }) => {
                                             />
                                         </form>
                                     </div>
-
                                     <svg className="absolute inset-0 w-full h-full opacity-20 z-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                                         <path fill="#fff" fillOpacity="1" d="M0,160L60,154.7C120,149,240,139,360,138.7C480,139,600,149,720,144C840,139,960,117,1080,117.3C1200,117,1320,139,1380,149.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
                                     </svg>

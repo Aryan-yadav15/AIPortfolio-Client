@@ -23,7 +23,7 @@ const FormModal = ({ onClose }) => {
         e.preventDefault();
 
         emailjs
-            .sendForm('service_uid66jz', 'template_431qapa', form.current, 'uXWBgZT1nRdMB3EwV')
+            .sendForm('service_dqxhc3u', 'template_fyhezq4', form.current, 'oPyOb5F87lB69PtAr')
             .then(
                 (result) => {
                     console.log('SUCCESS!', result.text);
